@@ -1,0 +1,47 @@
+*{
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+}
+.caja1-contenedor{
+    background-color: azure;
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, 0.1fr) 1fr;
+    grid-template-areas:
+        "header"
+        "navbar"
+        "main";
+}
+
+.hijo1{
+    grid-area: header;
+    background-color: yellow;
+}
+
+.hijo2{
+    grid-area: navbar;
+    background-color: blue;
+}
+
+.hijo3{
+    grid-area: main;
+    background-color: red;
+}
+
+.hijo4{
+    grid-area: side;
+    background-color: greenyellow;
+}
+
+@media (min-width: 1024px) {
+    .contenedorpadre{
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(1, 0.3fr) repeat(3, 1fr);
+        grid-template-areas:
+            "header header header header"
+            "navbar main main side"
+            "navbar main main side"
+            "navbar main main side";}
